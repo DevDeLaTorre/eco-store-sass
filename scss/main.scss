@@ -1,1 +1,133 @@
-$var : #fff;
+$primary-color : #ffefe7;
+$secondary-color : #ffdac6;
+$tertiary-color : #babd8d;
+$primary-text-color : #7c6a0a;
+$primary-font : 'IBM Plex Sans',
+sans-serif;
+
+%shared-display {
+    display: flex;
+    justify-content: space-between;
+}
+
+body {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    background-color: $primary-color;
+    font-family: $primary-font;
+}
+
+nav {
+    @extend%shared-display;
+    background-color: $primary-color;
+    width: auto;
+    height: 100px;
+    color: $primary-text-color;
+    padding: 15px;
+
+    p {
+        font-size: 1.5em;
+        padding-left: 30px;
+    }
+
+    .icons {
+        display: flex;
+        gap: 15px;
+
+        button {
+            background: none;
+            border-style: none;
+        }
+    }
+}
+
+article {
+    @extend%shared-display;
+    justify-content: space-around;
+    width: auto;
+    color: $primary-text-color;
+    padding: 0 20px 0 20px;
+
+    h1 {
+        font-size: 3em;
+    }
+
+    .impact-section {
+        button {
+            padding: 15px;
+            background-color: #fa9500;
+            border-style: none;
+            border-radius: 25px;
+        }
+    }
+
+    .image-section {
+        img {
+            width: 25vw;
+            border-radius: 19px;
+        }
+    }
+}
+
+main {
+    background-color: $primary-color;
+}
+
+section {
+    width: 100%;
+    height: auto;
+    padding: 60px 0;
+
+    h2 {
+        color: $primary-text-color;
+        font-size: 2em;
+    }
+
+    .healthcare {
+        h2 {
+            font-weight: 300;
+            padding-bottom: 60px;
+        }
+
+        .card-section {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            row-gap: 2em;
+        }
+        .product-card {
+            width: 10em;
+            height: auto;
+            background-color: $secondary-color;
+            color: $primary-text-color;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 0 auto;
+            .product-image {
+                width: 10em;
+                height: 10em;
+                margin: 0 auto;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    background-size: cover;
+                }
+            }
+        }
+    }
+
+    .furniture{
+        @extend.healthcare;
+        .product-card{
+            background-color: $tertiary-color;
+            color: white;
+        }
+    }
+}
+
+footer {
+    $background : #fa9500;
+    background-color: $background;
+    width: 100%;
+    height: 300px;
+}
